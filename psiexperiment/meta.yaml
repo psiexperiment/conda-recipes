@@ -1,4 +1,4 @@
-{% set name = "PsiExperiment" %}
+{% set name = "psiexperiment" %}
 {% set version = "0.1.3" %}
 
 package:
@@ -25,26 +25,18 @@ build:
 
 requirements:
   host:
-    - bcolz
-    - enaml
-    - joblib
-    - numpy
-    - palettable
-    - pyqtgraph
     - python
-    - scipy
     - pip
 
   run:
-    - bcolz
-    - enaml
-    - joblib
-    - numpy
-    - palettable
-    - pyqtgraph
-    - python
-    - scipy
-    - matplotlib
+    - python >=3.6
+    - enaml >=0.10.4
+    - numpy >=1.17.2
+    - scipy >=1.3.1
+    - bcolz >=1.2.1
+    - joblib >=0.13.2
+    - palettable >=3.3.0
+    - pyqtgraph >=0.10.0
 
 test:
   imports:
@@ -62,28 +54,20 @@ test:
     - psi.data.io
     - psi.experiment
     - psi.token
-    - tests
-    - tests.workbench
-      #  commands:
-      #    - psi --help
-      #    - psi-config --help
-      #    - psi-behavior --help
-      #    - psi-calibration --help
-      #    - psi-cfts --help
-      #    - psi-cohort --help
-      #    - psi-summarize-abr --help
-      #    - psi-summarize-abr-gui --help
-      #    - psi-summarize-abr-auto --help
+    commands:
+    - psi-config --help
+    - psi-summarize-abr --help
+    - psi-summarize-abr-gui --help
+    - psi-summarize-abr-auto --help
 
 about:
-  home: The package home page
-  license: LICENSE.txt
-  license_family: OTHER
-  license_file: 
+  home: https://github.com/bburan/psiexperiment
+  license: BSD 3-clause
+  license_family: BSD
   summary: "Module for running trial-based experiments."
-  doc_url: 
-  dev_url: 
+  doc_url: https://psiexperiment.readthedocs.io
+  dev_url: https://github.com/bburan/psiexperiment
 
 extra:
   recipe-maintainers:
-    - your-github-id-here
+    - bburan
