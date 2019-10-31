@@ -1,0 +1,89 @@
+{% set name = "PsiExperiment" %}
+{% set version = "0.1.3" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: a876aa2124414a98f37644c5619903626381e2de858a3ca256d29ab355cac236
+
+build:
+  number: 0
+  entry_points:
+    - psi=psi.application.psi_launcher:main
+    - psi-config=psi.application:config
+    - psi-behavior=psi.application.base_launcher:main_animal
+    - psi-calibration=psi.application.base_launcher:main_calibration
+    - psi-cfts=psi.application.base_launcher:main_ear
+    - psi-cohort=psi.application.base_launcher:main_cohort
+    - psi-summarize-abr=psi.data.io.summarize_abr:main
+    - psi-summarize-abr-gui=psi.data.io.summarize_abr:main_gui
+    - psi-summarize-abr-auto=psi.data.io.summarize_abr:main_auto
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - bcolz
+    - enaml
+    - joblib
+    - numpy
+    - palettable
+    - pyqtgraph
+    - python
+    - scipy
+    - pip
+
+  run:
+    - bcolz
+    - enaml
+    - joblib
+    - numpy
+    - palettable
+    - pyqtgraph
+    - python
+    - scipy
+    - matplotlib
+
+test:
+  imports:
+    - psi
+    - psi.application
+    - psi.application.experiment
+    - psi.context
+    - psi.controller
+    - psi.controller.calibration
+    - psi.controller.devices
+    - psi.controller.engines
+    - psi.core
+    - psi.core.enaml
+    - psi.data
+    - psi.data.io
+    - psi.experiment
+    - psi.token
+    - tests
+    - tests.workbench
+      #  commands:
+      #    - psi --help
+      #    - psi-config --help
+      #    - psi-behavior --help
+      #    - psi-calibration --help
+      #    - psi-cfts --help
+      #    - psi-cohort --help
+      #    - psi-summarize-abr --help
+      #    - psi-summarize-abr-gui --help
+      #    - psi-summarize-abr-auto --help
+
+about:
+  home: The package home page
+  license: LICENSE.txt
+  license_family: OTHER
+  license_file: 
+  summary: "Module for running trial-based experiments."
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
