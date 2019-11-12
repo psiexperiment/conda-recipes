@@ -1,3 +1,16 @@
+# Packaging
+
+First, make sure your package works. This is important if you've been running in developer mode:
+
+	conda create -n <test_env_name> python=<python version>
+	cd <source_dir>
+	python setup.py install
+	<commands to make sure it works>
+
+Now, remove the env:
+
+	conda remove -n <test_env_name> --all
+
 You need a build environment:
 
 	conda create -n build conda-build constructor anaconda-client
@@ -12,11 +25,25 @@ First, build your PyPI distribution:
 
 	cd <source_dir>
 	python setup.py sdist bdist_wheel
-	twinde upload dist/*
+	twine upload dist/*
 
-Now, build your conda package:
+At this point, it may be worthwhile to verify that installing from pip works by creating another test environment. Once you're satisfied everything works, build your conda package:
 
 	cd <recipe_dir>
 	conda-build <package_name>
 
-[General instructions](https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages/) on building conda packages.
+Now, cleanup if desired:
+
+	conda-build purge
+
+# Installers
+
+## Windows
+
+You need a build environment:
+
+	conda create -n build constructor
+
+# Useful links
+
+* [General instructions](https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages/) on building conda packages.
