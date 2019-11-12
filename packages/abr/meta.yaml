@@ -1,0 +1,55 @@
+{% set name = "ABR" %}
+{% set version = "0.0.1.post2" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 8581dcd18c100383f644f46c636b1a2dbe547d2de770b0efa4ea1edd930df2dc
+   
+build:
+  noarch: python
+  
+  # Increment if this is a new build for the same version
+  number: 1
+
+  entry_points:
+    - abr = abr.app.cmd_main:main
+    - abr_gui = abr.app.cmd_main:main
+    - abr_loop = abr.app.cmd_main_loop:main
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python >=3.6,<3.8
+    - enaml >=0.10.4
+    - numpy >=1.17.2
+    - matplotlib >=3.0.0
+    - scipy >=1.3.1
+    - pandas >=0.25
+
+test:
+  imports:
+    - abr
+    - abr.app
+    - abr.data
+    - abr.parsers
+    - abr.parsers.PSI
+  commands:
+    - abr_gui --help
+    - abr_loop --help
+    - abr --help
+
+about:
+  home: https://github.com/bburan/abr
+  license: BSD 3-clause
+  license_family: BSD
+  summary: GUI application for analyzing ABR waveforms
+
+extra:
+  recipe-maintainers:
+    - bburan
