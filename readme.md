@@ -47,3 +47,4 @@ You need a build environment:
 # Useful links
 
 * [General instructions](https://docs.anaconda.com/anaconda-cloud/user-guide/tasks/work-with-packages/) on building conda packages.
+* [Wiki for menuinst](https://github.com/ContinuumIO/menuinst/wiki).
