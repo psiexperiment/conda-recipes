@@ -1,0 +1,25 @@
+{
+	"menu_name": "Psiexperiment",
+	"menu_items": [
+		{
+			"name": "Calibration",
+			"script": "${PYTHON_SCRIPTS}/psi-calibration.exe",
+			"desktop": false
+		},
+		{
+			"name": "CFTS",
+			"script": "${PYTHON_SCRIPTS}/psi-cfts.exe",
+			"desktop": false
+		},
+		{
+			"name": "ABR post-acquisition processing",
+			"script": "${PYTHON_SCRIPTS}/summarize-abr-auto-gui.exe",
+			"desktop": false
+		},
+		{
+			"name": "ABR analysis",
+			"script": "${PYTHON_SCRIPTS}/abr.exe",
+			"desktop": false
+		}
+	]
+}

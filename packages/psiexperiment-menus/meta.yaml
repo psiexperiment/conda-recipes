@@ -1,0 +1,18 @@
+{% set name = "psiexperiment-menus" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+   
+build:
+  noarch: generic
+
+about:
+  license: BSD 3-clause
+  license_family: BSD
+  summary: Sidecar used to create menus for installer
+
+extra:
+  recipe-maintainers:
+    - bburan
