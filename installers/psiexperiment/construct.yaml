@@ -1,0 +1,15 @@
+name: psiexperiment
+version: 0.13
+
+channels:
+    - http://repo.anaconda.com/pkgs/main
+    - https://conda.anaconda.org/bburan
+    - http://repo.continuum.io/pkgs/msys2
+    - http://repo.continuum.io/pkgs/free
+
+specs:
+    - abr
+    - conda
+    - psiexperiment
+
+license_file: license.txt
