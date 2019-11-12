@@ -1,5 +1,5 @@
 {% set name = "psiexperiment" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.3.post2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,10 +7,14 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: a876aa2124414a98f37644c5619903626381e2de858a3ca256d29ab355cac236
+  sha256: 36624413b0c6ca4fc99ae799ac03bca3a9fac337b8153194fd631b8420bba170
 
 build:
-  number: 0
+  noarch: python
+
+  # Increment if this is a new build for the same version.
+  number: 1
+
   entry_points:
     - psi=psi.application.psi_launcher:main
     - psi-config=psi.application:config
@@ -21,6 +25,7 @@ build:
     - psi-summarize-abr=psi.data.io.summarize_abr:main
     - psi-summarize-abr-gui=psi.data.io.summarize_abr:main_gui
     - psi-summarize-abr-auto=psi.data.io.summarize_abr:main_auto
+
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -29,7 +34,8 @@ requirements:
     - pip
 
   run:
-    - python >=3.6
+    # Enaml does not support 3.8 bytecode changes yet
+    - python >=3.6,<3.8
     - enaml >=0.10.4
     - numpy >=1.17.2
     - scipy >=1.3.1
@@ -54,7 +60,7 @@ test:
     - psi.data.io
     - psi.experiment
     - psi.token
-    commands:
+  commands:
     - psi-config --help
     - psi-summarize-abr --help
     - psi-summarize-abr-gui --help
