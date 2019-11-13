@@ -11,5 +11,6 @@ specs:
     - abr
     - conda
     - psiexperiment
+    - psiexperiment-menus
 
 license_file: license.txt
