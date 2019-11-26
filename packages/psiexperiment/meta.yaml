@@ -1,5 +1,5 @@
 {% set name = "psiexperiment" %}
-{% set version = "0.1.4.post2" %}
+{% set version = "0.1.5rc3" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 4a9c50ea03e0cbe6785dc7a309e6bd093b7d7ec7b26fd6ba1efa13363e77a7d1
+  sha256: 0ac4c5d1cab578f9437ae8204f72a70272eade69eeb153c5afab40faa483faa4
 
 build:
   noarch: python
@@ -43,6 +43,8 @@ requirements:
     - joblib >=0.13.2
     - palettable >=3.3.0
     - pyqtgraph >=0.10.0
+    - json_tricks
+    - pydaqmx >=1.4.2.post1
 
 test:
   imports:
@@ -58,6 +60,7 @@ test:
     - psi.core.enaml
     - psi.data
     - psi.data.io
+    - psi.data.sinks
     - psi.experiment
     - psi.token
   commands:
