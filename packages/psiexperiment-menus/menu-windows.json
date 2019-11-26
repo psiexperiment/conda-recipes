@@ -13,7 +13,7 @@
 		},
 		{
 			"name": "ABR post-acquisition processing",
-			"script": "${PYTHON_SCRIPTS}/summarize-abr-auto-gui.exe",
+			"script": "${PYTHON_SCRIPTS}/psi-summarize-abr-gui.exe",
 			"desktop": false
 		},
 		{

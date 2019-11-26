@@ -8,6 +8,9 @@ package:
 build:
   noarch: generic
 
+  # Increment if this is a new build for the same version
+  number: 3
+
 about:
   license: BSD 3-clause
   license_family: BSD
