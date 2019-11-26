@@ -1,5 +1,5 @@
 name: psiexperiment
-version: 0.13
+version: 0.1.4.post2
 
 channels:
     - http://repo.anaconda.com/pkgs/main
@@ -10,7 +10,8 @@ channels:
 specs:
     - abr
     - conda
-    - psiexperiment
+    - console_shortcut
+    - psiexperiment==0.1.4.post2
     - psiexperiment-menus
 
 license_file: license.txt
