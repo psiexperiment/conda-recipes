@@ -5,7 +5,7 @@ if __name__ == '__main__':
     import subprocess
     import re
 
-    version_re = '\d+.\d+.\d+(.(a|b|rc|post)\d+)?'
+    version_re = '\d+.\d+.\d+((a|b|rc)\d+)?(.post\d+)?'
 
     parser = argparse.ArgumentParser('build')
     parser.add_argument('version')
