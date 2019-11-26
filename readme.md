@@ -1,4 +1,14 @@
-# Packaging
+# Overview
+
+The process of creating an installer consists of three steps. The first two tend to be platform-agnostic unless you have code that needs to be compiled (e.g., Cython code): 
+
+1. Build the source distribution and wheel that will be uploaded to PyPI
+2. Build the conda package
+3. Create the installer
+
+The Python script, `packages/build.py`, facilitates the first two steps. The Python script, `installers/build.py` facilitates the last step.
+
+# Packaging manually
 
 First, make sure your package works. This is important if you've been running in developer mode:
 
