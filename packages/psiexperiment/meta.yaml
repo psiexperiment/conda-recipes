@@ -1,5 +1,5 @@
 {% set name = "psiexperiment" %}
-{% set version = "0.1.5rc3" %}
+{% set version = "0.1.5rc4" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 0ac4c5d1cab578f9437ae8204f72a70272eade69eeb153c5afab40faa483faa4
+  sha256: 58a7878918518e3235107b5388519b084211a63bb4344f8058e1ad008ca110ce
 
 build:
   noarch: python
