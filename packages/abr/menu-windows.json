@@ -1,0 +1,11 @@
+{
+    "menu_name": "",
+	"menu_items": [
+		{
+			"name": "ABR analysis",
+			"script": "${PYTHON_SCRIPTS}/abr-gui.exe",
+			"desktop": false,
+            "icon": "${MENU_DIR}/abr.ico"
+		}
+	]
+}

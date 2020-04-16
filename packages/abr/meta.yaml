@@ -1,5 +1,6 @@
 {% set name = "ABR" %}
-{% set version = "0.0.1.post2" %}
+{% set version = "0.0.3" %}
+{% set build = 0 %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,22 +8,21 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 8581dcd18c100383f644f46c636b1a2dbe547d2de770b0efa4ea1edd930df2dc
+  sha256: edf4cf9d02a732498f083c5f61d15110568494661968796fe6bc719ae37efd7d
    
 build:
-  noarch: python
-  
   # Increment if this is a new build for the same version
-  number: 2
+  number: {{ build }}
 
   entry_points:
-    - abr = abr.app.cmd_launcher:main
-    - abr_gui = abr.app.cmd_main:main
-    - abr_loop = abr.app.cmd_main_loop:main
-
-  script: "{{ PYTHON }} -m pip install . -vv"
+    - abr = abr.app:main_launcher
+    - abr_gui = abr.app:main_gui
+    - abr_batch = abr.app:main_batch
 
 requirements:
+  build:
+    - python
+    - setuptools
   host:
     - python
     - pip
@@ -42,9 +42,9 @@ test:
     - abr.parsers
     - abr.parsers.PSI
   commands:
+    - abr
     - abr_gui --help
-    - abr_loop --help
-    - abr --help
+    - abr_batch --help
 
 about:
   home: https://github.com/bburan/abr
