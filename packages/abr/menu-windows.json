@@ -3,7 +3,7 @@
 	"menu_items": [
 		{
 			"name": "ABR analysis",
-			"script": "${PYTHON_SCRIPTS}/abr-gui.exe",
+			"script": "${PYTHON_SCRIPTS}/abr.exe",
 			"desktop": false,
             "icon": "${MENU_DIR}/abr.ico"
 		}
