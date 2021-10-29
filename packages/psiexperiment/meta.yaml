@@ -34,35 +34,36 @@ requirements:
     - pip
 
   run:
-    # Enaml does not support 3.8 bytecode changes yet
-    - python >=3.6,<3.8
+    - python >=3.7
     - enaml >=0.10.4
-    - numpy >=1.17.2
+    - numpy >=1.18
+    - matplotlib >= 3.3.2
+    - pandas >= 1.1.3
     - scipy >=1.3.1
-    - bcolz >=1.2.1
-    - joblib >=0.13.2
+    - psi-bcolz >=1.2.2
     - palettable >=3.3.0
-    - pyqtgraph >=0.10.0
-    - json_tricks
-    - pydaqmx >=1.4.2.post1
+    - pyqtgraph >=0.11.0
+    - tqdm
+    - pydaqmx >=1.4.5
+    - tdtpy
 
 test:
   imports:
     - psi
     - psi.application
     - psi.application.experiment
-    - psi.context
-    - psi.controller
-    - psi.controller.calibration
+    - psi.context.api
+    - psi.controller.api
+    - psi.controller.calibration.api
     - psi.controller.devices
     - psi.controller.engines
     - psi.core
-    - psi.core.enaml
-    - psi.data
-    - psi.data.io
-    - psi.data.sinks
-    - psi.experiment
-    - psi.token
+    - psi.core.enaml.api
+    - psi.data.api
+    - psi.data.io.api
+    - psi.data.sinks.api
+    - psi.experiment.api
+    - psi.token.api
   commands:
     - psi-config --help
     - psi-summarize-abr --help
@@ -70,13 +71,14 @@ test:
     - psi-summarize-abr-auto --help
 
 about:
-  home: https://github.com/bburan/psiexperiment
+  home: https://github.com/psiexpeirment/psiexperiment
   license: BSD 3-clause
   license_family: BSD
-  summary: "Module for running trial-based experiments."
+  summary: "Module for running auditory experiments."
   doc_url: https://psiexperiment.readthedocs.io
-  dev_url: https://github.com/bburan/psiexperiment
+  dev_url: https://github.com/psiexpeirment/psiexperiment
 
 extra:
   recipe-maintainers:
     - bburan
+    - buranconsult
