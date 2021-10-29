@@ -1,19 +1,17 @@
 {% set name = "PyDAQmx" %}
-{% set version = "1.4.2.post1" %}
+{% set version = "1.4.5" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  git_url: https://github.com/clade/PyDAQmx
-  git_rev: 6083c8d
+  git_url: https://github.com/psiexperiment/PyDAQmx
+  git_rev: "v{{ version }}"
 
 build:
   noarch: python
-
-  number: 0
-
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
